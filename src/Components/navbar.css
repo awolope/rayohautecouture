@@ -32,6 +32,21 @@ Container {
 .icon-sketch:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
+.cart-count {
+  background-color: transparent; /* Badge color */
+  color: red;
+
+  padding: 0.2em 0.5em;
+  font-size: 0.7rem;
+  margin-left: -0.6rem;
+  position: relative;
+  top: 5px;
+}
+.cart-link {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .navbar dropdown {
     background-color: white;

@@ -2,21 +2,11 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;
-  transition: transform 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
-.discount-label {
-  background-color: red;
-  color: white;
-  font-size: 0.8rem;
-  padding: 5px;
-  border-radius: 3px;
-  top: 10px;
-  right: 10px;
+.card img {
+  max-height: 150px;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -31,4 +21,8 @@
     flex: 0 0 25%;
     max-width: 25%;
   }
+}
+
+.alert {
+  margin-top: 20px;
 }

@@ -1,17 +1,18 @@
 import React from "react";
-import "./LOgo.png";
-import "./navbar.css";
-import { useCart } from "./CartContext";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import "./navbar.css";
+import Logo from "./LOgo.png";
+import { useCart } from "./cartcontext"; // Import the updated CartProvider
 
 const NavigationBar = () => {
-  const { cartCount } = useCart();
+  const { cartCount } = useCart(); // Access cartCount from the CartContext
+
   return (
-    <Navbar expand="lg" className="navbar-transparent " fixed="top">
+    <Navbar expand="sm" className="navbar-transparent" fixed="top">
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <img
-            src="/LOgo.png"
+            src={Logo}
             alt="FashionShop"
             width="90"
             height="50"
@@ -33,14 +34,12 @@ const NavigationBar = () => {
             </Nav.Link>
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link href="/cart">
+            <Nav.Link href="/cart" className="cart-link">
               <i className="fas fa-shopping-cart text-danger"></i>{" "}
-              <span className="badge badge-pill badge-secondary text-danger">
-                {cartCount}
-              </span>
+              <span className="cart-count">{cartCount}</span>
             </Nav.Link>
             <Nav.Link href="#profile">
-              <i className="fas fa-user-circle text-danger"></i>{" "}
+              <i className="fas fa-user-circle text-danger"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -45,16 +45,16 @@ const Section = () => {
           </div>
         </div>
         <div className="image-note">
-          <div className="image-wrapper">
+          <div className="image-wrapper mt-5">
             <img
               src="../maindiv2.png"
               alt="Accesory"
-              className="responsive-img"
+              className="responsive-img mt-5"
             />
           </div>
           <div className="note mt-5">
             <h3 className="h3s mt-5">
-              <span className="color-text">Elevate Your </span>
+              <span className="color-text mt-5">Elevate Your </span>
               <br />
               Neckline
             </h3>

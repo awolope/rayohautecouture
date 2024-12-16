@@ -9,7 +9,6 @@
     #c9c0bb 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  overflow: hidden;
 }
 
 .header .image-side {
@@ -87,7 +86,7 @@
   letter-spacing: -0.02em;
   text-align: left;
 }
-@media (max-width: 1024px) {
+@media (min-width: 701px) and (max-width: 1024px) {
   .header {
     flex-direction: row; /* Stack content vertically */
     justify-content: center;
@@ -96,7 +95,7 @@
 
   .header .image-side {
     width: 100%; /* Full width for the image on smaller screens */
-    height: 40vh; /* Set a specific height for smaller screens */
+    height: 60vh; /* Set a specific height for smaller screens */
     background-position: center; /* Center the image */
   }
 
@@ -106,8 +105,30 @@
     margin-top: 55px;
     text-align: left; /* Center the text for mobile */
   }
+  .hassle {
+    margin-left: 160px;
+  }
 }
 @media (max-width: 700px) {
+  .header {
+    flex-direction: row; /* Stack content vertically */
+    justify-content: center;
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .header .image-side {
+    margin-top: 70px;
+    width: 100%; /* Full width for the image on smaller screens */
+    height: 45vh; /* Set a specific height for smaller screens */
+    background-position: center; /* Center the image */
+  }
+
+  .header-content {
+    width: 100%; /* Content takes up full width */
+    padding: 1rem;
+    margin-top: 55px;
+    text-align: left; /* Center the text for mobile */
+  }
   .h1h {
     font-size: 19px;
     line-height: 30px;
@@ -128,7 +149,7 @@
     font-size: 8px;
   }
   .shopButton {
-    width: 110.5px;
+    width: 100.5px;
     padding: 7px;
     height: 28px;
 

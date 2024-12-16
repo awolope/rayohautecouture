@@ -12,11 +12,13 @@
     );
 
   background-blend-mode: overlay;
-  padding: 20px;
+
+  padding: 21px;
 }
 
 .left-content {
   width: 30%;
+  margin-top: -90px;
 }
 
 .h2cs {
@@ -27,6 +29,7 @@
   letter-spacing: -0.02em;
   text-align: left;
 }
+
 .left-content p {
   font-family: Inter;
   font-size: 14px;
@@ -37,7 +40,7 @@
 }
 
 .image-background {
-  width: 40%;
+  width: 35%;
   background-image: url("../countdownbg.png"); /* Replace with your image */
   background-size: cover;
   background-position: center;
@@ -47,6 +50,7 @@
 .right-timer {
   width: 20%;
   display: flex;
+
   flex-direction: column;
   align-items: center;
 }
@@ -57,15 +61,183 @@
 
 .timer {
   font-size: 2rem;
-  color: #e74c3c; /* Countdown text color */
-  background-color: #fff;
+  color: rgba(191, 117, 75, 1); /* Countdown text color */
   padding: 10px;
-  border-radius: 5px;
-  border: 2px solid #e74c3c;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.time-block {
+  display: flex;
+  gap: 10px;
+  margin-top: -170px;
+  margin-left: -70px;
+  align-items: center;
+}
+
+.time-unit {
+  background-color: rgba(191, 117, 75, 1); /* Background color for time units */
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 50%; /* Circular border radius */
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-unit span {
+  font-size: 3rem;
+}
+
+/* For screens above 1200px, keep the layout the same */
+@media (max-width: 1200px) {
+  .left-content {
+    width: 40%;
+  }
+
+  .image-background {
+    width: 30%;
+  }
+
+  .right-timer {
+    width: 25%;
+  }
+
+  .timer {
+    font-size: 1.4rem;
+  }
+
+  .time-unit {
+    font-size: 2.2rem;
+    width: 65px;
+    height: 65px;
+  }
+
+  .time-block {
+    margin-left: -60px;
+  }
+}
+
+/* For screens 992px and smaller (tablets), maintain side-by-side layout */
+@media (max-width: 992px) {
+  .left-content {
+    width: 30%;
+  }
+
+  .image-background {
+    width: 30%;
+  }
+
+  .right-timer {
+    width: 30%;
+  }
+
+  .timer {
+    font-size: 1.3rem;
+  }
+
+  .time-unit {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .time-block {
+    margin-left: -50px;
+  }
+}
+
+/* For screens 768px and smaller (large phones), keep the content and image side by side */
 @media (max-width: 768px) {
+  .left-content {
+    width: 34%;
+    margin-top: -10px;
+    text-align: left;
+  }
   .countdown-section {
-    display: none;
+    padding: 10px;
+    height: 32vh;
+  }
+  .h2cs {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .left-content p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .image-background {
+    width: 45%;
+    margin-top: 12px;
+    height: 35vh;
+  }
+
+  .right-timer {
+    width: 30%;
+  }
+
+  .timer {
+    font-size: 1.1rem;
+    margin-left: 0px;
+  }
+
+  .time-unit {
+    font-size: 1.1rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .time-block {
+    margin-left: -80px;
+    margin-top: -90px;
+  }
+}
+
+/* For screens 576px and smaller (small phones), maintain side-by-side layout */
+@media (max-width: 576px) {
+  .left-content {
+    width: 34%;
+    text-align: left;
+  }
+  .countdown-section {
+    padding: 10px;
+    height: 32vh;
+  }
+  .h2cs {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .left-content p {
+    font-size: 8px;
+    line-height: 9px;
+  }
+  .image-background {
+    width: 45%;
+    height: 30vh;
+  }
+
+  .right-timer {
+    width: 30%;
+  }
+
+  .timer {
+    font-size: 1.1rem;
+    margin-left: 0px;
+  }
+
+  .time-unit {
+    font-size: 0.7rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  .time-block {
+    margin-left: -80px;
+    margin-top: -100px;
   }
 }

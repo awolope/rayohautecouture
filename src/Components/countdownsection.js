@@ -9,6 +9,7 @@ const CountdownSection = () => {
   const handleClick = () => {
     navigate("/shop");
   };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
@@ -21,10 +22,10 @@ const CountdownSection = () => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
-    return `${hours.toString().padStart(2, "0")}:${minutes
-      .toString()
-      .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+    return { hours, minutes, secs };
   };
+
+  const { hours, minutes, secs } = formatTime(timeLeft);
 
   return (
     <div className="countdown-section">
@@ -43,7 +44,17 @@ const CountdownSection = () => {
       </div>
       <div className="image-background"></div>
       <div className="right-timer">
-        <div className="timer">{formatTime(timeLeft)}</div>
+        <div className="timer">
+          <div className="time-block">
+            <div className="time-unit">{hours.toString().padStart(2, "0")}</div>
+            <span>:</span>
+            <div className="time-unit">
+              {minutes.toString().padStart(2, "0")}
+            </div>
+            <span>:</span>
+            <div className="time-unit">{secs.toString().padStart(2, "0")}</div>
+          </div>
+        </div>
       </div>
     </div>
   );

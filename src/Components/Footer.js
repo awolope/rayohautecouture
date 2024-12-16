@@ -4,8 +4,8 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <footer className="bg-light text-center text-lg-start">
-      <Container className="p-4">
+    <footer className="footer bg-light text-center text-lg-start">
+      <Container className="p-4 ">
         <Row>
           <Col lg="3" md="6" className="mb-4 mb-md-0">
             <h5 className="text-uppercase">Customer Care</h5>

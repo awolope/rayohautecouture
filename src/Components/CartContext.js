@@ -1,50 +1,48 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useMemo } from "react";
 
+// Create the Cart context
 const CartContext = createContext();
 
+// Custom hook to use the Cart context
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  // State for managing the cart
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || [] // Load cart from local storage if available
+  );
 
+  // Function to add an item to the cart
   const addToCart = (product) => {
-    const isProductInCart = cart.find((item) => item._id === product._id);
-    if (isProductInCart) {
-      // Remove the product if it already exists
-      setCart(cart.filter((item) => item._id !== product._id));
-    } else {
-      // Add the product with a default quantity of 1 if it doesn't exist
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update local storage
   };
 
-  const updateCartQuantity = (product, quantity) => {
-    setCart(
-      cart.map((item) =>
-        item._id === product._id ? { ...item, quantity } : item
-      )
-    );
+  // Function to remove an item from the cart
+  const removeFromCart = (productId) => {
+    const updatedCart = cart.filter((item) => item._id !== productId);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update local storage
   };
 
-  const removeFromCart = (product) => {
-    setCart(cart.filter((item) => item._id !== product._id));
+  // Clear the cart
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem("cart");
   };
 
-  const calculateTotal = () => {
-    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  };
-
-  const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+  // Memoized cart count to optimize performance
+  const cartCount = useMemo(() => cart.length, [cart]);
 
   return (
     <CartContext.Provider
       value={{
         cart,
         addToCart,
-        updateCartQuantity,
         removeFromCart,
-        calculateTotal,
-        cartCount,
+        clearCart,
+        cartCount, // Provide cartCount in the context
       }}
     >
       {children}

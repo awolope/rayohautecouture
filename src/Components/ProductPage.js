@@ -1,34 +1,57 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./product.css";
-import { useCart } from "./CartContext"; // Import the cart context
+
 const ProductPage = () => {
-  const { addToCart, cart } = useCart(); // Use the cart context
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/product");
+  // Product data
+  const products = [
+    {
+      _id: 1,
+      name: "Product 1",
+      price: 5000,
+      image: "image1.jpg",
+      discount: 10,
+    },
+    {
+      _id: 2,
+      name: "Product 2",
+      price: 8000,
+      image: "image2.jpg",
+      discount: 15,
+    },
+    {
+      _id: 3,
+      name: "Product 3",
+      price: 3000,
+      image: "image3.jpg",
+      sales: true,
+    },
+    {
+      _id: 4,
+      name: "Product 4",
+      price: 7000,
+      image: "image4.jpg",
+      discount: 20,
+    },
+    {
+      _id: 5,
+      name: "Product 5",
+      price: 6000,
+      image: "image5.jpg",
+      sales: true,
+    },
+  ];
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  const addToCart = (product) => {
+    const updatedCart = cart.find((item) => item._id === product._id)
+      ? cart.filter((item) => item._id !== product._id) // Remove from cart
+      : [...cart, product]; // Add to cart
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
   return (
     <div className="container mt-5">
@@ -37,8 +60,8 @@ const ProductPage = () => {
         {products.map((product) => (
           <div className="col-md-3 col-sm-6 mb-4" key={product._id}>
             <div className="card position-relative">
-              {/* Discount label */}
-              {product.sales && (
+              {/* Discount Label */}
+              {product.discount && (
                 <span className="discount-label position-absolute">
                   {product.discount}% off
                 </span>

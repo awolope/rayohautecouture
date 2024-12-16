@@ -3,6 +3,7 @@ import Header from "./header";
 import Main from "./Main";
 import Section from "./Section";
 import CountdownSection from "./countdownsection";
+import ReviewsContact from "./reviews";
 const Home = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const Home = () => {
       <Main />
       <Section />
       <CountdownSection />
+      <ReviewsContact />
     </div>
   );
 };

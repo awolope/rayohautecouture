@@ -25,10 +25,9 @@
   color: white;
 }
 .writing-section {
-  margin-top: 140px;
-  width: 33%; /* Writing section occupies 25% of the page width */
-  margin-right: -120px;
-  margin-left: 50px;
+  margin-top: 100px;
+  width: 32%; /* Writing section occupies 25% of the page width */
+  padding: 15px;
   color: #fff;
 }
 .pm1 {
@@ -49,7 +48,7 @@
   flex-direction: row; /* Arrange the images in a column */
   justify-content: space-around;
   align-items: center;
-  width: 60%; /* Images section occupies the remaining 75% of the page width */
+  width: 56%; /* Images section occupies the remaining 75% of the page width */
 }
 
 .images-section img {
@@ -64,43 +63,44 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1020px) {
   .main {
     flex-direction: row;
     text-align: center;
-    height: 300px;
+    height: 200px;
   }
 
   .writing-section {
     width: 27%; /* Writing section takes up full width on mobile */
     padding: 0px;
-    margin-top: 90px;
+    margin-top: 60px;
     margin-left: 15px;
     margin-right: -18px;
   }
   .pm1 {
-    font-size: 8px;
+    font-size: 9px;
     font-size: 100;
     margin: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     line-height: 10px;
   }
 
   .images-section {
     width: 37%;
 
-    margin-top: 30px;
-    margin-bottom: -75px; /* Images section takes up full width on mobile */
+    margin-top: -20px;
+    margin-bottom: -91px; /* Images section takes up full width on mobile */
   }
 
   .images-section img {
-    width: 58%;
-    height: 50%;
+    width: 55%;
+    height: 40%;
+
     margin: 6px;
     object-fit: cover;
   }
   .h2m {
-    font-size: 9.5px;
+    font-size: 10.5px;
     line-height: 12px;
   }
 }

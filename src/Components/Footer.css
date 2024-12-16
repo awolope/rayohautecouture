@@ -1,0 +1,61 @@
+.footer-bottom {
+  background-color: #f8f9fa;
+
+  font-size: 0.8rem;
+}
+footer a {
+  text-decoration: none;
+  font-size: 10px;
+}
+/* Social Icons Section Sty
+ling */
+.social-icons {
+  text-align: center;
+
+  border-radius: 10px; /* Optional: gives rounded corners */
+}
+.reserve {
+  background-color: rgba(191, 117, 75, 1);
+}
+.social-icons-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px; /* Space between icons */
+}
+
+.social-icon {
+  color: rgb(235, 86, 0);
+  margin-top: 100px; /* Increase margin-top */
+  font-size: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #ffebcd;
+}
+
+.footer-line {
+  margin: 0;
+  border: 0;
+  text-align: center;
+}
+
+.footer-bottom .text-muted {
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.footer-line {
+  margin: 0;
+  border: 0;
+
+  border-top: 0px solid #ddd; /* Very thin line */
+}
+@media (max-width: 900px) {
+  .social-icon {
+    margin-top: 20px;
+  }
+}

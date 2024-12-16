@@ -1,0 +1,39 @@
+/* General Styles for the Transparent Inside Sketch Icon */
+.icon-sketch {
+  font-size: 1.8rem;
+  color: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 5px; /* Some padding to give space around the icon */
+  position: relative;
+}
+.badge {
+  margin-left: -13px;
+}
+.icon-sketch:before {
+  content: "\f007";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: black;
+}
+
+.icon-sketch.icon-red:before {
+  content: "\f07a";
+  color: red;
+}
+
+Container {
+  z-index: 1000;
+}
+.icon-sketch:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 768px) {
+  .navbar dropdown {
+    background-color: white;
+  }
+}

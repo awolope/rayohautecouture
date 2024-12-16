@@ -1,0 +1,204 @@
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 60px;
+}
+.viewdiv {
+  display: flex;
+  justify-content: center;
+}
+.h3s {
+  font-family: Cormorant Garamond;
+  font-size: 23px;
+  font-weight: 200;
+  line-height: 33.91px;
+  letter-spacing: 0.001em;
+  text-align: left;
+}
+.color-text {
+  color: rgba(191, 117, 75, 1);
+}
+.sh1 {
+  font-family: Cormorant Garamond;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 72.66px;
+  letter-spacing: -0.02em;
+  text-align: center;
+
+  margin-top: 40px;
+  color: rgba(166, 135, 124, 1);
+}
+.sh1 span {
+  color: black;
+}
+.image-note {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  width: 40%; /* Each image-note pair takes up 48% of the section width */
+}
+
+.image-wrapper {
+  position: relative;
+  width: 350px;
+}
+
+.responsive-img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.note {
+  max-width: 60%;
+}
+
+.note p {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18.36px;
+  letter-spacing: -0.02em;
+}
+
+/* Media Queries for Responsive Sizing */
+@media (max-width: 1200px) {
+  .section {
+    gap: 5px;
+
+    justify-content: center;
+  }
+
+  .image-note {
+    width: 100%;
+  }
+  .sh1 {
+    font-size: 25px;
+    margin-bottom: -20px;
+  }
+  .image-wrapper {
+    width: 120px; /* Shrinks the image */
+  }
+
+  .note h3 {
+    font-size: 1.1rem;
+  }
+  .label {
+    font-size: 10px;
+  }
+
+  .note p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .image-note {
+    width: 100%;
+  }
+  .label {
+    font-size: 10px;
+  }
+  .image-wrapper {
+    width: 170px; /* Further reduces image size */
+  }
+  .responsive-img {
+    width: 170px;
+  }
+  .note h3 {
+    font-size: 1rem;
+  }
+
+  .note p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-note {
+    width: 100%; /* Keeps the items in a row */
+  }
+
+  .image-wrapper {
+    width: 150px; /* Reduces image size further for smaller screens */
+  }
+  .responsive-img {
+    width: 150px;
+  }
+  .note h3 {
+    font-size: 0.95rem;
+  }
+  .label {
+    font-size: 10px;
+  }
+  .note p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-note {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .image-wrapper {
+    width: 150px; /* Smallest image size */
+  }
+  .responsive-img {
+    width: 150px;
+  }
+  .label {
+    font-size: 10px;
+  }
+  .note h3 {
+    font-size: 0.9rem;
+  }
+
+  .note p {
+    font-size: 8px;
+  }
+}
+@media (max-width: 380px) {
+  .image-note {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .image-wrapper {
+    width: 120px; /* Smallest image size */
+  }
+  .responsive-img {
+    width: 120px;
+  }
+  .label {
+    font-size: 9px;
+  }
+  .note h3 {
+    font-size: 0.9rem;
+  }
+
+  .note p {
+    font-size: 6px;
+  }
+}

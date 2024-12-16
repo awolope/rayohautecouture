@@ -1,0 +1,106 @@
+/* YourComponent.css */
+.main {
+  display: flex;
+  height: 100vh;
+  padding: 0px;
+  background: linear-gradient(0deg, #d6c3b7, #d6c3b7),
+    linear-gradient(
+      181.16deg,
+      rgba(0, 0, 0, 0.81) -23.34%,
+      rgba(0, 0, 0, 0.27) 105.87%
+    );
+  background-blend-mode: overlay;
+  margin-top: 30px;
+}
+.h2m {
+  font-family: Cormorant Garamond;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 46.66px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: rgba(191, 117, 75, 1);
+}
+.h2m span {
+  color: white;
+}
+.writing-section {
+  margin-top: 140px;
+  width: 33%; /* Writing section occupies 25% of the page width */
+  margin-right: -120px;
+  margin-left: 50px;
+  color: #fff;
+}
+.pm1 {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 19.36px;
+  letter-spacing: 0.001em;
+  text-align: left;
+  margin: 10px;
+}
+
+.writing-section h1 {
+  font-size: 2.5rem;
+}
+
+.images-section {
+  display: flex;
+  flex-direction: row; /* Arrange the images in a column */
+  justify-content: space-around;
+  align-items: center;
+  width: 60%; /* Images section occupies the remaining 75% of the page width */
+}
+
+.images-section img {
+  width: 40%; /* Adjust the width of the images */
+  margin: 10px 0; /* Add space between images */
+  margin-top: 220px;
+  object-fit: cover;
+  height: auto; /* Allow images to scale properly */
+}
+.fa-arrow-up {
+  margin-left: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: row;
+    text-align: center;
+    height: 300px;
+  }
+
+  .writing-section {
+    width: 27%; /* Writing section takes up full width on mobile */
+    padding: 0px;
+    margin-top: 90px;
+    margin-left: 15px;
+    margin-right: -18px;
+  }
+  .pm1 {
+    font-size: 8px;
+    font-size: 100;
+    margin: 0px;
+    margin-bottom: 20px;
+    line-height: 10px;
+  }
+
+  .images-section {
+    width: 37%;
+
+    margin-top: 30px;
+    margin-bottom: -75px; /* Images section takes up full width on mobile */
+  }
+
+  .images-section img {
+    width: 58%;
+    height: 50%;
+    margin: 6px;
+    object-fit: cover;
+  }
+  .h2m {
+    font-size: 9.5px;
+    line-height: 12px;
+  }
+}

@@ -1,0 +1,155 @@
+.header {
+  display: flex;
+  height: 100vh; /* Full screen height */
+  align-items: center;
+  justify-content: flex-end; /* Align content to the right */
+  position: relative;
+  background: linear-gradient(
+    to right,
+    #c9c0bb 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  overflow: hidden;
+}
+
+.header .image-side {
+  width: 40%; /* Image takes up 40% of the width */
+  height: 100%;
+  background-image: url("./headerbg.png"); /* Replace with your actual image path */
+  background-size: cover; /* Cover ensures image covers the full area */
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.header-content {
+  z-index: 1;
+  padding-left: 2rem;
+  margin-top: 50px;
+  color: Black;
+  width: 54%;
+}
+.curved-line-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+.curved-line {
+  width: 125px; /* Width as specified */
+  height: 37px; /* Height as specified */
+  border-top: 5px solid rgba(191, 117, 75, 1); /* Thickness of the top border */
+  margin-top: -20px;
+  border-radius: 90px 60px 0px 0px;
+  position: relative;
+  transform: rotate(180deg); /* Flip the curve upwards */
+  opacity: 1; /* Make sure it's visible */
+}
+.international {
+  display: inline-flex;
+  margin-top: 100px;
+  margin-left: 50px;
+}
+.hassle {
+  display: inline-flex;
+  margin-top: 40px;
+  margin-left: 300px;
+}
+.hp1 {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  width: 70%;
+}
+.shopButton {
+  background: rgba(191, 117, 75, 1);
+  color: white;
+  width: Hug (199.5px) px;
+  height: Hug (60px) px;
+  top: 508px;
+  left: 99.5px;
+  font-size: 12px;
+  padding: 18px 28px 18px 24px;
+  gap: 12px;
+  border-radius: 48px 48px 48px 48px;
+  opacity: 0px;
+
+  border: 1px solid rgba(191, 117, 75, 1);
+}
+.fa-fire {
+  margin-right: 10px;
+}
+.h1h {
+  font-family: Cormorant Garamond;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 57.5px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: row; /* Stack content vertically */
+    justify-content: center;
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .header .image-side {
+    width: 100%; /* Full width for the image on smaller screens */
+    height: 40vh; /* Set a specific height for smaller screens */
+    background-position: center; /* Center the image */
+  }
+
+  .header-content {
+    width: 100%; /* Content takes up full width */
+    padding: 1rem;
+    margin-top: 55px;
+    text-align: left; /* Center the text for mobile */
+  }
+}
+@media (max-width: 700px) {
+  .h1h {
+    font-size: 19px;
+    line-height: 30px;
+  }
+  .international {
+    margin-top: 22px;
+    margin-left: -10px;
+    font-size: 7px;
+  }
+  .hassle {
+    margin-left: 60px;
+    font-size: 7px;
+    margin-top: -10px;
+  }
+  .hp1 {
+    width: 100%;
+    line-height: 12px;
+    font-size: 8px;
+  }
+  .shopButton {
+    width: 110.5px;
+    padding: 7px;
+    height: 28px;
+
+    font-size: 7px;
+  }
+  .curved-line {
+    width: 80px;
+    height: 30px;
+  }
+}
+@media (min-width: 700px) and (max-width: 1100px) {
+  .h1h {
+    font-size: 40px;
+    line-height: 30px;
+  }
+  .hp1 {
+    font-size: 12px;
+    width: 100%;
+  }
+  .curved-line {
+    width: 115px;
+    height: 34px;
+  }
+}

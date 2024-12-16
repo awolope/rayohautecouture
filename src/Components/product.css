@@ -1,0 +1,13 @@
+.card {
+  overflow: hidden; /* Prevents content from overflowing the card */
+}
+
+.discount-label {
+  color: red; /* White text color */
+
+  font-weight: 700; /* Bold text */
+  top: 10px; /* Distance from the top */
+  right: 10px; /* Distance from the left */
+  position: absolute; /* Position it absolutely within the card */
+  z-index: 1; /* Ensure it's above the image */
+}

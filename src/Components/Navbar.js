@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "./navbar.css";
-import Logo from "./LOgo.png";
+import "./LOgo.png";
 import { useCart } from "./cartcontext"; // Import the updated CartProvider
 
 const NavigationBar = () => {
@@ -12,7 +12,7 @@ const NavigationBar = () => {
       <Container>
         <Navbar.Brand href="/">
           <img
-            src={Logo}
+            src="./LOgo.png"
             alt="FashionShop"
             width="90"
             height="50"

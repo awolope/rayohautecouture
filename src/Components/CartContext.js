@@ -26,6 +26,17 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update local storage
   };
 
+  // Function to update the quantity of a product in the cart
+  const updateQuantity = (productId, increment) => {
+    const updatedCart = cart.map((product) =>
+      product._id === productId
+        ? { ...product, quantity: product.quantity + increment }
+        : product
+    );
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update local storage
+  };
+
   // Clear the cart
   const clearCart = () => {
     setCart([]);
@@ -41,6 +52,7 @@ export const CartProvider = ({ children }) => {
         cart,
         addToCart,
         removeFromCart,
+        updateQuantity, // Include updateQuantity in the context
         clearCart,
         cartCount, // Provide cartCount in the context
       }}

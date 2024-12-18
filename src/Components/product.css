@@ -1,17 +1,47 @@
+/* General card styles */
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  overflow: hidden;
-  transition: transform 0.3s;
+  padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* Card title and text styling */
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
+.card-text {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Cart icon styling */
+.cart-icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: #a0522d; /* Brown color */
+  margin-right: 5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* On hover, change icon color */
+.cart-icon:hover {
+  color: #8b4513; /* Darker brown */
+}
+
+/* Discount label styling */
 .discount-label {
-  background-color: red;
-  color: white;
+  position: absolute;
+  background-color: white;
+  color: red;
   font-size: 0.8rem;
   padding: 5px;
   border-radius: 3px;
@@ -19,14 +49,73 @@
   right: 10px;
 }
 
-@media (max-width: 768px) {
+/* Container for dropdowns */
+.dropdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between dropdowns */
+  margin-bottom: 20px; /* Space below the dropdowns */
+}
+
+/* Dropdown styling */
+.normal-dropdown {
+  font-size: 12px; /* Regular font size */
+  padding: 5px 10px; /* Adjust padding for a compact look */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid black; /* Black border */
+  color: black; /* Black text */
+  cursor: pointer;
+  max-width: 100px;
+}
+
+/* Option styling */
+.normal-dropdown option {
+  font-size: 12px;
+}
+
+/* Focused state */
+.normal-dropdown:focus {
+  outline: none;
+  border-color: black; /* Darker black on focus */
+  box-shadow: 0 0 2px black; /* Slight shadow on focus */
+}
+
+/* Responsive Grid for Small Screens */
+@media (max-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px; /* Space between cards */
+  }
+
+  .dropdown-container {
+    gap: 10px;
+  }
+}
+
+/* Responsive Grid for Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
   .col-sm-6 {
     flex: 0 0 50%;
     max-width: 50%;
   }
+
+  .dropdown-container {
+    gap: 10px;
+  }
 }
 
-@media (min-width: 769px) {
+/* Responsive Grid for Desktops */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .col-md-3 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    font-size: 12px;
+  }
+}
+
+/* Grid for Larger Screens */
+@media (min-width: 1201px) {
   .col-md-3 {
     flex: 0 0 25%;
     max-width: 25%;

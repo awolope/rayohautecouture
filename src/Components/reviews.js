@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import "./reviews.css"; // Add appropriate CSS for styling
 
+emailjs.init({
+  publicKey: "XeQGi4XaWje9cFCUP", // Replace with your actual public key
+});
+
 const ReviewsContact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,13 +23,19 @@ const ReviewsContact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // Replace with your Email.js service ID
-        "YOUR_TEMPLATE_ID", // Replace with your Email.js template ID
-        formData,
-        "YOUR_USER_ID" // Replace with your Email.js user ID
+        "service_50r00m6", // Replace with your Email.js service ID
+        "template_qkvdnih", // Replace with your Email.js template ID
+        templateParams, // Use the `templateParams` variable here
+
+        "XeQGi4XaWje9cFCUP" // Ensure this matches the initialization
       )
       .then(
         (response) => {
@@ -51,17 +61,17 @@ const ReviewsContact = () => {
           />
           <div className="review-content">
             <p className="review-text">
-              I just received my order, i love the fabric and how it fits 🤗
+              I just received my order, I love the fabric and how it fits 🤗
               You're the best! I'll definitely be getting more dresses from you
-              and tell my friends about your brand Thank you so much
+              and tell my friends about your brand. Thank you so much!
             </p>
           </div>
         </div>
         <div className="review">
           <div className="review-content">
             <p className="review-text">
-              Thank you so much, i just received the gown. I love the fabric and
-              how it fits❤️
+              Thank you so much! I just received the gown. I love the fabric and
+              how it fits ❤️
             </p>
           </div>
           <img
@@ -78,7 +88,7 @@ const ReviewsContact = () => {
           />
           <div className="review-content">
             <p className="review-text">
-              I love it🥺🥺🥺 It's so fineeeeee❤️ Thank you.
+              I love it 🥺🥺🥺 It's so fineeeeee ❤️ Thank you.
             </p>
           </div>
         </div>

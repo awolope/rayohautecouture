@@ -32,7 +32,7 @@ const ReviewsContact = () => {
     emailjs
       .send(
         "service_50r00m6", // Replace with your Email.js service ID
-        "template_qkvdnih", // Replace with your Email.js template ID
+        "template_5i1viqn", // Replace with your Email.js template ID
         templateParams, // Use the `templateParams` variable here
 
         "XeQGi4XaWje9cFCUP" // Ensure this matches the initialization
@@ -96,7 +96,9 @@ const ReviewsContact = () => {
 
       {/* Contact Us Section */}
       <div className="contact-us-section">
-        <h2 className="contact-heading">Contact Us</h2>
+        <h2 className="contact-heading" id="contact-us">
+          Contact Us
+        </h2>
         <form onSubmit={handleSubmit} className="contact-form">
           <input
             type="text"

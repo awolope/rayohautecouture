@@ -16,132 +16,114 @@ const ProductPage = () => {
       name: "Yveline",
       price: 30000,
       image: "yvette co-ord.png",
+      newCollection: true,
     },
     {
       _id: 2,
       name: "Yvette",
       price: 32000,
       image: "yvettepants.png",
+      newCollection: true,
     },
     {
       _id: 3,
       name: "Yasmine",
       price: 25000,
       image: "yasmin set.png",
-      sales: true,
+      newCollection: true,
     },
     {
       _id: 4,
       name: "Yara Pearl",
       price: 12000,
       image: "yara.png",
-      discount: 20,
+      newCollection: true,
     },
     {
       _id: 5,
       name: "Yvette Top",
       price: 12000,
       image: "yvette top.png",
-      sales: true,
+      newCollection: true,
     },
     {
       _id: 6,
-      name: "Yveline",
-      price: 30000,
-      image: "yvette co-ord.png",
+      name: "Yumin Ruffle dress",
+      price: 20000,
+      image: "countdownbg.png",
+      newCollection: true,
     },
     {
       _id: 7,
-      name: "Yvette",
+      name: "Unisex African Pant",
       price: 32000,
-      image: "yvettepants.png",
+      image: "image3.jpeg",
     },
     {
       _id: 8,
-      name: "Yasmine",
-      price: 25000,
-      image: "yasmin set.png",
-      sales: true,
+      name: "Ample silk dress (mini) white",
+      price: 12000,
+      image: "image13.jpeg",
     },
     {
       _id: 9,
-      name: "Yara Pearl",
+      name: "Ample silk dress (mini) black",
       price: 12000,
-      image: "yara.png",
-      discount: 20,
+      image: "image12.jpeg",
     },
     {
       _id: 10,
-      name: "Yvette Top",
+      name: "Ample silk dress (mini) red",
       price: 12000,
-      image: "yvette top.png",
-      sales: true,
+      image: "image11.jpeg",
     },
     {
       _id: 11,
-      name: "Yveline",
-      price: 30000,
-      image: "yvette co-ord.png",
+      name: "Ample silk dress (mini) green",
+      price: 12000,
+      image: "image10.jpeg",
     },
     {
       _id: 12,
-      name: "Yvette",
-      price: 32000,
-      image: "yvettepants.png",
+      name: "Ample silk dress (maxi) white",
+      price: 15000,
+      image: "image6.jpeg",
     },
     {
       _id: 13,
-      name: "Yasmine",
-      price: 25000,
-      image: "yasmin set.png",
-      sales: true,
+      name: "Ample silk dress (maxi) black",
+      price: 15000,
+      image: "image5.jpeg",
     },
     {
       _id: 14,
-      name: "Yara Peal",
-      price: 12000,
-      image: "yara.png",
-      discount: 20,
+      name: "Ample silk skirt (black)",
+      price: 10000,
+      image: "image7.jpeg",
     },
     {
       _id: 15,
-      name: "Yvette Top",
-      price: 12000,
-      image: "yvette top.png",
-      sales: true,
+      name: "Ample silk skirt",
+      price: 10000,
+      image: "image8.jpeg",
     },
     {
       _id: 16,
-      name: "Yveline",
-      price: 30000,
-      image: "yvette co-ord.png",
+      name: "Ample silk skirt with slit",
+      price: 10000,
+      image: "image9.jpeg",
     },
     {
       _id: 17,
-      name: "Yvette",
-      price: 32000,
-      image: "yvettepants.png",
+      name: "milkmaid-top (brown)",
+      price: 800,
+      image: "image1.jpeg",
     },
     {
       _id: 18,
-      name: "Yasmine",
-      price: 25000,
-      image: "yasmin set.png",
-      sales: true,
-    },
-    {
-      _id: 19,
-      name: "Yara Pearl",
-      price: 12000,
-      image: "yara.png",
-      discount: 20,
-    },
-    {
-      _id: 20,
-      name: "Yvette Top",
-      price: 12000,
-      image: "yvette top.png",
-      sales: true,
+      name: "milkmaid-top",
+      price: 8000,
+      image: "image0.jpeg",
     },
   ];
 
@@ -162,7 +144,7 @@ const ProductPage = () => {
     if (filterOption === "discount" && product.discount) {
       return true;
     }
-    if (filterOption === "sales" && product.sales) {
+    if (filterOption === "newCollection" && product.newCollection) {
       return true;
     }
     return filterOption === "";
@@ -200,7 +182,7 @@ const ProductPage = () => {
           >
             <option value="">Filter By</option>
             <option value="discount">Discounted Products</option>
-            <option value="sales">On Sale</option>
+            <option value="newCollection"> New Collection</option>
           </select>
         </div>
 
@@ -208,15 +190,14 @@ const ProductPage = () => {
           {filteredProducts.map((product) => (
             <div className="col-md-3 col-sm-6 mb-4" key={product._id}>
               <div className="card position-relative">
-                {product.discount && (
-                  <span className="discount-label position-absolute">
-                    {product.discount}% off
-                  </span>
+                {product.newCollection && (
+                  <span className="discount-label position-absolute">New</span>
                 )}
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="card-img-top"
+                  className="card-img-top "
+                  height="250px"
                 />
                 <div className="card-body d-flex justify-content-between align-items-center">
                   <div>

@@ -1,54 +1,59 @@
-/* General Styles for the Transparent Inside Sketch Icon */
-.icon-sketch {
-  font-size: 1.8rem;
-  color: transparent;
-  border: 2px solid black;
-  border-radius: 50%;
-  padding: 5px; /* Some padding to give space around the icon */
-  position: relative;
-}
-.badge {
-  margin-left: -13px;
-}
-.icon-sketch:before {
-  content: "\f007";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: black;
+/* General navbar styling */
+.navbar-transparent {
+  background: transparent; /* Adjust as needed */
+  padding: 10px 15px;
 }
 
-.icon-sketch.icon-red:before {
-  content: "\f07a";
-  color: red;
-}
-
-Container {
-  z-index: 1000;
-}
-.icon-sketch:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.cart-count {
-  background-color: transparent; /* Badge color */
-  color: red;
-
-  padding: 0.2em 0.5em;
-  font-size: 0.7rem;
-  margin-left: -0.6rem;
-  position: relative;
-  top: 5px;
-}
-.cart-link {
+/* Icon group for alignment */
+.icons-group {
   display: flex;
+  gap: 15px; /* Space between icons */
   align-items: center;
 }
 
-@media (max-width: 768px) {
-  .navbar dropdown {
-    background-color: white;
+/* Style for the cart icon */
+.cart-iconn {
+  font-size: 20px;
+  color: red; /* Adjust icon color */
+  position: relative;
+}
+
+/* Style for the user icon */
+.user-icon {
+  font-size: 22px;
+  color: red;
+}
+
+/* Style for the cart count badge */
+.cart-count {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+  position: absolute;
+}
+
+/* Ensure icons are visible on small screens */
+@media (max-width: 576px) {
+  .navbar {
+    justify-content: space-between;
+
+    font-size: 10px;
+  }
+
+  .icons-group {
+    gap: 1px; /* Adjust spacing on smaller screens */
+  }
+  .cart-iconn {
+    font-size: 10px;
+  }
+
+  .user-icon {
+    font-size: 8px; /* Slightly smaller icons on smaller screens */
+  }
+
+  .cart-count {
+    font-size: 8px;
+    margin-top: 3px; /* Adjust font size for cart count */
   }
 }

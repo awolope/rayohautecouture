@@ -16,7 +16,7 @@ const OrderPage = () => {
 
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
-    0
+    1
   );
 
   // Function to send email to the client (admin)

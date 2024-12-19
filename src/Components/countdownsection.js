@@ -37,7 +37,7 @@ const CountdownSection = () => {
           Grab your favorites at unbeatable prices in our exclusive
           flashsale—today only!
         </p>
-        <button onClick={handleClick} className="shopButtonc btn">
+        <button onClick={handleClick} className="shopButtonc btn" type="button">
           <i className="fas fa-fire text-white"></i>
           Buy Now
         </button>

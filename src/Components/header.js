@@ -26,7 +26,7 @@ const Header = () => {
           confidence. Explore our collection to find the perfect outfit that
           speaks to your unique style and personality.{" "}
         </p>
-        <button onClick={handleClick} className="shopButton">
+        <button onClick={handleClick} className="shopButtons">
           <i className="fas fa-fire text-white"></i>
           Shop Now
         </button>

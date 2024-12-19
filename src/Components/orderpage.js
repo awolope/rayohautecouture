@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
-
+import "./orderpage.css";
 const OrderPage = () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const [customerName, setCustomerName] = useState("");
@@ -198,7 +198,7 @@ const OrderPage = () => {
                 {paymentMade && !orderPlaced && (
                   <button
                     type="button"
-                    className="shopButton"
+                    className="shopButtono"
                     onClick={handleOrderPlacement}
                   >
                     Place Order
@@ -208,7 +208,7 @@ const OrderPage = () => {
                 {paymentMade && orderPlaced && (
                   <button
                     type="button"
-                    className="btn btn-success mt-3 mb-5"
+                    className="btn shopButtono mt-3 mb-5"
                     onClick={confirmOrderAndSendClientEmail}
                   >
                     Complete Order

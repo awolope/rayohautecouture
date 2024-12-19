@@ -17,7 +17,7 @@ const Section = () => {
       </h1>
       <div className="viewdiv">
         {" "}
-        <button onClick={handleClick} className="shopButton ">
+        <button onClick={handleClick} className="shopButtonse ">
           View Collection
           <i className="fas fa-arrow-up text-white"></i>
         </button>

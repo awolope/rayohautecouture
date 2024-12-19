@@ -84,6 +84,21 @@
 .time-unitp span {
   font-size: 3rem;
 }
+.shopButtonh {
+  background: rgba(191, 117, 75, 1);
+  color: white;
+  width: Hug (199.5px) px;
+  height: Hug (60px) px;
+  top: 508px;
+  left: 99.5px;
+  font-size: 12px;
+  padding: 18px 28px 18px 24px;
+  gap: 12px;
+  border-radius: 48px 48px 48px 48px;
+  opacity: 0px;
+
+  border: 1px solid rgba(191, 117, 75, 1);
+}
 
 /* For screens above 1200px, keep the layout the same */
 @media (max-width: 1200px) {
@@ -141,6 +156,13 @@
     width: 34%;
     margin-top: -10px;
     text-align: left;
+  }
+  .shopButtonh {
+    width: 100.5px;
+    padding: 7px;
+    height: 28px;
+
+    font-size: 7px;
   }
   .countdown-sectionp {
     padding: 10px;

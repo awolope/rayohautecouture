@@ -89,6 +89,21 @@
   justify-content: center;
   align-items: center;
 }
+.shopButtonsc {
+  background: rgba(191, 117, 75, 1);
+  color: white;
+  width: Hug (199.5px) px;
+  height: Hug (60px) px;
+  top: 508px;
+  left: 99.5px;
+  font-size: 12px;
+  padding: 18px 28px 18px 24px;
+  gap: 12px;
+  border-radius: 48px 48px 48px 48px;
+  opacity: 0px;
+
+  border: 1px solid rgba(191, 117, 75, 1);
+}
 
 .time-unit span {
   font-size: 3rem;
@@ -234,6 +249,14 @@
     font-size: 0.7rem;
     width: 30px;
     height: 30px;
+  }
+
+  .shopButtonc {
+    width: 100.5px;
+    padding: 7px;
+    height: 28px;
+
+    font-size: 7px;
   }
 
   .time-block {

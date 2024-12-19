@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useCart } from "../cartcontext";
 import { FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from React Router
-
+import "./orderpage.css";
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity } = useCart();
   const [isProceeding, setIsProceeding] = useState(false); // Tracks button state
@@ -100,7 +100,7 @@ const CartPage = () => {
       <h3 className="text-center">Total: ₦{total.toFixed(2)}</h3>
       <div className="text-center mt-4">
         <button
-          className="shopButton mb-5 btn"
+          className="shopButtono mb-5"
           onClick={handleProceedToPayment}
           disabled={isProceeding} // Disable the button while proceeding
         >

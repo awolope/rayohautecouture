@@ -197,7 +197,7 @@ const ProductPage = () => {
                   src={product.image}
                   alt={product.name}
                   className="card-img-top "
-                  height="250px"
+                  height="240px"
                 />
                 <div className="card-body d-flex justify-content-between align-items-center">
                   <div>

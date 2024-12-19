@@ -123,7 +123,7 @@ const ReviewsContact = () => {
             onChange={handleChange}
             required
           ></textarea>
-          <button type="submit" className="shopButton">
+          <button type="submit" className="shopButtonr">
             Send Message
           </button>
         </form>

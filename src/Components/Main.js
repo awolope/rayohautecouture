@@ -19,7 +19,7 @@ const Main = () => {
             <span> – where classic meets chic</span>
           </h2>
           <p className="pm1">Discover Your Signature Look</p>
-          <button onClick={handleClick} className="shopButton">
+          <button onClick={handleClick} className="shopButtonm">
             Shop For The Look
             <i className="fas fa-arrow-up text-white"></i>
           </button>

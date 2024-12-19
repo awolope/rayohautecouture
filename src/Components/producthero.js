@@ -34,7 +34,7 @@ const ProductHero = () => {
         <p>
           Enjoy a Stunning 30% Discount on All Orders During Our Countdown Event
         </p>
-        <button onClick={handleClick} className="shopButton">
+        <button onClick={handleClick} className="shopButtonh">
           <i className="fas fa-fire text-white"></i>
           Buy Now
         </button>

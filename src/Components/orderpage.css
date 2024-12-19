@@ -1,28 +1,25 @@
-.card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-}
+.shopButtono {
+  background: rgba(191, 117, 75, 1);
+  color: white;
+  width: Hug (199.5px) px;
+  height: Hug (60px) px;
+  top: 508px;
+  left: 99.5px;
+  font-size: 12px;
+  padding: 18px 28px 18px 24px;
+  gap: 12px;
+  border-radius: 48px 48px 48px 48px;
+  opacity: 0px;
 
-.card img {
-  max-height: 150px;
-  object-fit: cover;
+  border: 1px solid rgba(191, 117, 75, 1);
 }
 
 @media (max-width: 768px) {
-  .col-sm-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
+  .shopButtono {
+    width: 100.5px;
+    padding: 7px;
+    height: 28px;
 
-@media (min-width: 769px) {
-  .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
+    font-size: 7px;
   }
-}
-
-.alert {
-  margin-top: 20px;
 }

@@ -48,7 +48,7 @@ const ProductPage = () => {
     },
     {
       _id: 6,
-      name: "Yumin Ruffle dress",
+      name: "Yumi Ruffle dress",
       price: 20000,
       image: "countdownbg.png",
       newCollection: true,
@@ -56,7 +56,7 @@ const ProductPage = () => {
     {
       _id: 7,
       name: "Unisex African Pant",
-      price: 32000,
+      price: 20000,
       image: "image3.jpeg",
     },
     {

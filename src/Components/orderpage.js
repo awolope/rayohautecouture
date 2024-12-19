@@ -207,7 +207,6 @@ const OrderPage = () => {
 
                 {paymentMade && orderPlaced && (
                   <button
-                    type="button"
                     className="btn shopButtono mt-3 mb-5"
                     onClick={confirmOrderAndSendClientEmail}
                   >

@@ -80,7 +80,7 @@
   color: rgba(191, 117, 75, 1);
 }
 /* Responsive adjustments */
-@media (max-width: 1020px) {
+@media (max-width: 778px) {
   .main {
     flex-direction: row;
     text-align: center;
@@ -95,7 +95,7 @@
     font-size: 7px;
   }
   .writing-section {
-    width: 22%; /* Writing section takes up full width on mobile */
+    width: 27%; /* Writing section takes up full width on mobile */
     padding: 0px;
     margin-top: 60px;
     margin-left: 15px;
@@ -118,8 +118,8 @@
   .images-section img {
     width: 50%;
     height: 40%;
-    position: relative;
-    margin: 1px;
+
+    margin: 6px;
     object-fit: cover;
   }
   .h2m {

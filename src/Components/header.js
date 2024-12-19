@@ -7,7 +7,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/shop");
+    navigate("/product");
   };
   return (
     <div class="header">

@@ -7,7 +7,7 @@ const CountdownSection = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/shop");
+    navigate("/product");
   };
 
   useEffect(() => {

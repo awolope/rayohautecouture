@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { useCart } from "./cartcontext"; // Ensure this is correctly imported
+import { useCart } from "../cartcontext"; // Ensure this is correctly imported
 import "./navbar.css";
 const NavigationBar = () => {
   const { cartCount } = useCart(); // Access cartCount from the CartContext

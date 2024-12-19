@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useCart } from "./cartcontext";
+import { useCart } from "../cartcontext";
 import { FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from React Router
 

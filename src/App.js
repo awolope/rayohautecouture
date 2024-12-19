@@ -8,7 +8,7 @@ import CartPage from "./Components/CartPage";
 import ProductPage from "./Components/ProductPage";
 import OrderPage from "./Components/orderpage";
 import ThankYou from "./Components/thankyou";
-import { CartProvider } from "./Components/cartcontext";
+import { CartProvider } from "./cartcontext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 

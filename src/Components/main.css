@@ -75,7 +75,10 @@
 
   border: 1px solid rgba(191, 117, 75, 1);
 }
-
+.shopButtonm:hover {
+  background-color: white;
+  color: rgba(191, 117, 75, 1);
+}
 /* Responsive adjustments */
 @media (max-width: 1020px) {
   .main {

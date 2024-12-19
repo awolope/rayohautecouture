@@ -11,7 +11,10 @@
 
   border: 1px solid rgba(191, 117, 75, 1);
 }
-
+.shopButtono:hover {
+  background-color: white;
+  color: rgba(191, 117, 75, 1);
+}
 @media (max-width: 768px) {
   .shopButtono {
     width: 100.5px;

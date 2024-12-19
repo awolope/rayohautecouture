@@ -89,6 +89,10 @@
 .sh1 span {
   color: black;
 }
+.shopButtonse:hover {
+  background-color: white;
+  color: rgba(191, 117, 75, 1);
+}
 .shopButtonse {
   background: rgba(191, 117, 75, 1);
   color: white;

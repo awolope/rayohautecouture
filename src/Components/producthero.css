@@ -97,7 +97,10 @@
 
   border: 1px solid rgba(191, 117, 75, 1);
 }
-
+.shopButtonh:hover {
+  background-color: white;
+  color: rgba(191, 117, 75, 1);
+}
 /* For screens above 1200px, keep the layout the same */
 @media (max-width: 1200px) {
   .left-contentp {

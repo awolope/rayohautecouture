@@ -73,6 +73,10 @@
 
   border: 1px solid rgba(191, 117, 75, 1);
 }
+.shopButtons:hover {
+  background-color: white;
+  color: rgba(191, 117, 75, 1);
+}
 .fa-fire {
   margin-right: 10px;
 }

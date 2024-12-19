@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { useNavigate } from "react-router-dom";
 import "./orderpage.css";
-const OrderPage = () => {
+
+const OrderPage = ({ total }) => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
@@ -12,12 +13,17 @@ const OrderPage = () => {
   const [message, setMessage] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [orderConfirmed, setOrderConfirmed] = useState(false);
-  const navigate = useNavigate(); // For redirection
+  const navigate = useNavigate();
 
-  const totalPrice = cart.reduce(
-    (total, item) => total + item.price * item.quantity,
-    1
-  );
+  // Calculate the total price
+  const calculateTotalPrice = () => {
+    return cart.reduce(
+      (total, item) => total + item.price * (item.quantity || 1),
+      0
+    );
+  };
+
+  const totalPrice = total || calculateTotalPrice();
 
   // Function to send email to the client (admin)
   const sendClientEmail = () => {
@@ -27,7 +33,7 @@ const OrderPage = () => {
       customer_phone: customerPhone,
       customer_address: customerAddress,
       order_details: cart
-        .map((item) => `${item.name} - ₦${item.price} x ${item.quantity}`)
+        .map((item) => `${item.name} - ₦${item.price} x ${item.quantity || 1}`)
         .join("\n"),
       total_price: totalPrice,
     };
@@ -58,7 +64,6 @@ const OrderPage = () => {
       return;
     }
 
-    // Ensure the order is placed before confirming the order
     if (!orderPlaced) {
       setMessage("Please place the order first!");
       return;
@@ -69,16 +74,15 @@ const OrderPage = () => {
       return;
     }
 
-    // Send email to the client (admin)
     sendClientEmail();
 
     setOrderConfirmed(true);
     localStorage.removeItem("cart");
-    navigate("/thankyou"); // Redirect to thank you page after confirmation
+    navigate("/thankyou");
   };
 
   const handlePayment = () => {
-    setPaymentMade(!paymentMade); // Reverse the state of the payment made checkbox
+    setPaymentMade(!paymentMade);
   };
 
   const handleOrderPlacement = () => {
@@ -114,7 +118,7 @@ const OrderPage = () => {
                     >
                       <p>{product.name}</p>
                       <p>
-                        ₦{product.price} x {product.quantity}
+                        ₦{product.price} x {product.quantity || 1}
                       </p>
                       <img
                         src={product.image}

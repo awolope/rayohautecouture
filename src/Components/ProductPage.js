@@ -188,7 +188,7 @@ const ProductPage = () => {
 
         <div className="row">
           {filteredProducts.map((product) => (
-            <div className="col-md-3 col-sm-6 mb-4" key={product._id}>
+            <div className="col-md-3 col-sm-4 mb-4" key={product._id}>
               <div className="card position-relative">
                 {product.newCollection && (
                   <span className="discount-label position-absolute">New</span>

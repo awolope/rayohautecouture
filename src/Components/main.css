@@ -110,6 +110,8 @@
   }
 
   .images-section {
+    align-items: right;
+    margin-left: 30px;
     margin-top: -20px;
     margin-bottom: -91px; /* Images section takes up full width on mobile */
   }

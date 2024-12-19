@@ -116,7 +116,7 @@ const ProductPage = () => {
     {
       _id: 17,
       name: "milkmaid-top (brown)",
-      price: 800,
+      price: 8000,
       image: "image1.jpeg",
     },
     {

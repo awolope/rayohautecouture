@@ -27,7 +27,7 @@ const Main = () => {
       </div>
       <div className="images-section">
         <img src="../mainbg1.png" alt="1" />
-        <img src="../mainbg2.png" alt=" 2" />
+
         <img src="../mainbg3.png" alt=" 3" />
       </div>
     </div>

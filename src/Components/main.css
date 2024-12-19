@@ -118,7 +118,7 @@
   .images-section img {
     width: 50%;
     height: 40%;
-
+    position: relative;
     margin: 1px;
     object-fit: cover;
   }

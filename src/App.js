@@ -8,33 +8,28 @@ import CartPage from "./Components/CartPage";
 import ProductPage from "./Components/ProductPage";
 import OrderPage from "./Components/orderpage";
 import ThankYou from "./Components/thankyou";
-import { CartProvider } from "./Components/cartcontext"; // Import the CartProvider
+import { CartProvider } from "./Components/cartcontext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-function App() {
-  return (
-    <div className="app">
-      <React.StrictMode>
-        <CartProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/product" element={<ProductPage />} />
-            <Route path="/checkout" element={<OrderPage />} />
-            <Route path="/thankyou" element={<ThankYou />} />
-          </Routes>
-          <Footer />
-        </CartProvider>
-      </React.StrictMode>
-    </div>
-  );
-}
 
 function AppWrapper() {
   return (
     <Router>
-      <App />
+      <React.StrictMode>
+        <CartProvider>
+          <div className="app">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/product" element={<ProductPage />} />
+              <Route path="/checkout" element={<OrderPage />} />
+              <Route path="/thankyou" element={<ThankYou />} />
+            </Routes>
+            <Footer />
+          </div>
+        </CartProvider>
+      </React.StrictMode>
     </Router>
   );
 }

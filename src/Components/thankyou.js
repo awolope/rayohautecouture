@@ -34,7 +34,7 @@ const ThankYou = () => {
         </p>
 
         <div className="mt-4">
-          <button className="shopButton mb-5" onClick={goToHomePage}>
+          <button className="shopButtono mb-5" onClick={goToHomePage}>
             Back to Home Page
           </button>
         </div>

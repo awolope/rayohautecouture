@@ -1,15 +1,13 @@
 .shopButtono {
   background: rgba(191, 117, 75, 1);
   color: white;
-  width: Hug (199.5px) px;
-  height: Hug (60px) px;
+
   top: 508px;
   left: 99.5px;
   font-size: 12px;
   padding: 18px 28px 18px 24px;
   gap: 12px;
   border-radius: 48px 48px 48px 48px;
-  opacity: 0px;
 
   border: 1px solid rgba(191, 117, 75, 1);
 }

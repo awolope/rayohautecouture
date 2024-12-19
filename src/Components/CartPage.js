@@ -100,7 +100,7 @@ const CartPage = () => {
       <h3 className="text-center">Total: ₦{total.toFixed(2)}</h3>
       <div className="text-center mt-4">
         <button
-          className="shopButton mb-5"
+          className="shopButton mb-5 btn"
           onClick={handleProceedToPayment}
           disabled={isProceeding} // Disable the button while proceeding
         >

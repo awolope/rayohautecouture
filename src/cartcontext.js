@@ -9,35 +9,33 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   // State for managing the cart
   const [cart, setCart] = useState(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    return storedCart.map((item) => ({
-      ...item,
-      quantity: item.quantity || 1, // Ensure all items have a default quantity
-    }));
+    const storedCart = localStorage.getItem("cart");
+    return storedCart
+      ? JSON.parse(storedCart).map((item) => ({
+          ...item,
+          quantity: item.quantity || 1, // Ensure default quantity
+        }))
+      : [];
   });
 
   // Function to add an item to the cart
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item._id === product._id);
-    let updatedCart;
-    if (existingProduct) {
-      updatedCart = cart.map((item) =>
-        item._id === product._id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
-    } else {
-      updatedCart = [...cart, { ...product, quantity: 1 }];
-    }
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    const updatedCart = existingProduct
+      ? cart.map((item) =>
+          item._id === product._id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      : [...cart, { ...product, quantity: 1 }];
+
+    updateCartState(updatedCart);
   };
 
   // Function to remove an item from the cart
   const removeFromCart = (productId) => {
     const updatedCart = cart.filter((item) => item._id !== productId);
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    updateCartState(updatedCart);
   };
 
   // Function to update the quantity of a product in the cart
@@ -46,24 +44,39 @@ export const CartProvider = ({ children }) => {
       product._id === productId
         ? {
             ...product,
-            quantity: Math.max((product.quantity || 1) + increment, 1),
+            quantity: Math.max((product.quantity || 1) + increment, 1), // Prevents quantity below 1
           }
         : product
     );
+    updateCartState(updatedCart);
+  };
+
+  // Function to clear the cart
+  const clearCart = () => {
+    updateCartState([]);
+  };
+
+  // Utility function to update the cart state and sync with local storage
+  const updateCartState = (updatedCart) => {
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Clear the cart
-  const clearCart = () => {
-    setCart([]);
-    localStorage.removeItem("cart");
-  };
-
   // Memoized cart count to optimize performance
-  const cartCount = useMemo(() => {
-    return cart.reduce((count, item) => count + (item.quantity || 1), 0);
-  }, [cart]);
+  const cartCount = useMemo(
+    () => cart.reduce((count, item) => count + (item.quantity || 1), 0),
+    [cart]
+  );
+
+  // Memoized total price to ensure consistent calculations
+  const totalPrice = useMemo(
+    () =>
+      cart.reduce(
+        (total, item) => total + item.price * (item.quantity || 1),
+        0
+      ),
+    [cart]
+  );
 
   return (
     <CartContext.Provider
@@ -74,6 +87,7 @@ export const CartProvider = ({ children }) => {
         updateQuantity,
         clearCart,
         cartCount,
+        totalPrice,
       }}
     >
       {children}

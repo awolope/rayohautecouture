@@ -116,10 +116,10 @@
   }
 
   .images-section img {
-    width: 51%;
+    width: 50%;
     height: 40%;
 
-    margin: 6px;
+    margin: 1px;
     object-fit: cover;
   }
   .h2m {
